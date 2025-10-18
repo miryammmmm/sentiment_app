@@ -1,0 +1,11 @@
+{
+    "model_name": "sentiment_model",
+    "vectorizer": "tfidf_vectorizer",
+    "preprocessing_objects": [
+        "emojis",
+        "stopwords"
+    ],
+    "created_on": "2025-10-15 16:59:22.107628",
+    "author": "Votre Nom",
+    "description": "Mod\u00e8le de classification de sentiment pour l'API"
+}
