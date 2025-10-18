@@ -36,23 +36,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.write("🧠 Cette application permet de prédire le **sentiment d’un texte** (positif ou négatif) à l’aide d’un modèle de Machine Learning entraîné sur des données textuelles.")
+st.write("🧠 Cette application permet d’analyser le **sentiment d’un texte** (positif ou négatif) grâce à un modèle de Machine Learning entraîné sur des données textuelles.")
 
 # -------------------------
-# 🔗 URL de l'API FastAPI
+# 🔗 URL de l'API FastAPI hébergée sur Render
 # -------------------------
-API_URL = API_URL = "https://sentiment-app-dko7.onrender.com/predict"
+API_URL = "https://sentiment-app-dko7.onrender.com/predict"
 
 # -------------------------
 # 📝 Zone de texte utilisateur
 # -------------------------
 st.subheader("✍️ Saisissez un texte à analyser :")
-text = st.text_area("Votre texte :", height=130, placeholder="Exemple : J'adore ce film, il est incroyable !")
+text = st.text_area("Votre texte :", height=130, placeholder="Exemple : i love this film !")
 
 # -------------------------
 # 🧮 Analyse du sentiment
 # -------------------------
-if st.button("🔍 Analyser le sentiment"):
+if st.button("🔍 Lancer l’analyse du sentiment"):
     if text.strip():
         with st.spinner("Analyse en cours..."):
             try:
@@ -73,25 +73,24 @@ if st.button("🔍 Analyser le sentiment"):
                 else:
                     st.error("⚠️ Erreur : impossible d’obtenir une réponse de l’API.")
             except Exception as e:
-                st.error(f"Erreur de connexion à l’API : {e}")
+                st.error(f"⚠️ Erreur de connexion à l’API : {e}")
     else:
         st.warning("⚠️ Veuillez saisir un texte avant de lancer l’analyse.")
 
 # -------------------------
-# ℹ️ Section d’informations
+# ℹ️ Informations sur le modèle
 # -------------------------
 st.markdown("---")
 st.subheader("ℹ️ À propos du modèle")
 
-with st.expander("Voir les détails du modèle entraîné"):
+with st.expander("🧩 Voir les détails du modèle entraîné"):
     st.markdown("""
     - **Type de modèle :** Régression Logistique (`LogisticRegression`)
     - **Vectorisation :** TF-IDF (`TfidfVectorizer`)
-    - **Langue :** Français 🇫🇷  
-    - **But :** Déterminer si un texte exprime une opinion **positive** ou **négative**
+    - **Langue :** englais  
+    - **Objectif :** Déterminer si un texte exprime une opinion **positive** ou **négative**
     - **Entrée :** Phrase ou texte libre  
     - **Sortie :** Label de sentiment (`positif` ou `négatif`)
     """)
 
-st.caption("💡 Projet développé dans le cadre du TP Analyse de Sentiments (IA).")
-
+st.caption("💡 Projet développé dans le cadre du **TP : Analyse de Sentiments** en Intelligence Artificielle.")
