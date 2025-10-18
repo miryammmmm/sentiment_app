@@ -41,7 +41,7 @@ st.write("🧠 Cette application permet de prédire le **sentiment d’un texte*
 # -------------------------
 # 🔗 URL de l'API FastAPI
 # -------------------------
-API_URL = "http://127.0.0.1:8000/predict"
+API_URL = API_URL = "https://sentiment-app-dko7.onrender.com/predict"
 
 # -------------------------
 # 📝 Zone de texte utilisateur
